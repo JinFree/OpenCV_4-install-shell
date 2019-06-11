@@ -30,6 +30,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 make -j $(nproc)
 sudo make install
 sudo ldconfig
-echo "export LD_LIBRARY_PATH=/usr/local/lib:$(LD_LIBRARY_PATH)" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
 #!/bin/sh
 source ~/.bashrc
