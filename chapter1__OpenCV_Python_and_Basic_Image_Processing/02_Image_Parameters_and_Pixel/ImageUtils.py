@@ -2,6 +2,18 @@ import cv2
 import numpy as np
 
 
+def imageCopy(src):
+    return np.copy(src)
+    
+
+def getPixel(Image, x, y, c = None):
+    return Image[y, x, c]
+    
+    
+def setPixel(Image, value, x, y, c = None):
+    Image[y, x, c] = value
+
+
 def imageParameters(Image, ImageName = "This Image"):
     Height, Width = Image.shape[0], Image.shape[1]
     print("{}.shape is {}".format(ImageName, Image.shape))

@@ -18,12 +18,19 @@ ImageColor = imageRead(OpenPath, cv2.IMREAD_COLOR)
 ImageGray = imageRead(OpenPath, cv2.IMREAD_GRAYSCALE)
 ImageOrigin = imageRead(OpenPath, cv2.IMREAD_UNCHANGED)
 
-imageShow(ImageColor, "ImageColor, cv2.WINDOW_NORMAL", cv2.WINDOW_NORMAL)
-imageShow(ImageColor, "ImageColor, cv2.WINDOW_AUTOSIZE", cv2.WINDOW_AUTOSIZE)
-imageShow(ImageColor, "ImageColor, cv2.WINDOW_FREERATIO", cv2.WINDOW_FREERATIO)
-imageShow(ImageColor, "ImageColor, cv2.WINDOW_GUI_NORMAL", cv2.WINDOW_GUI_NORMAL)
-imageShow(ImageColor, "ImageColor, cv2.WINDOW_GUI_EXPANDED", cv2.WINDOW_GUI_EXPANDED)
+x, y = 100, 200
+PixelValue = getPixel(ImageColor, x, y)
+print("{}: Pixel values in {}, {}: {}".format("ImageColor", x, y, PixelValue))
 
-imageShow(ImageGray, "ImageGray, 5000ms", Time=5000)
+PixelValue_b = getPixel(ImageColor, x, y, 0)
+PixelValue_g = getPixel(ImageColor, x, y, 1)
+PixelValue_r = getPixel(ImageColor, x, y, 2)
+print("{}: Pixel values in {}, {}: b={}, g={}, r={}".format("ImageColor", x, y, PixelValue_b, PixelValue_g, PixelValue_r))
+imageShow(ImageColor, "ImageColor")
 
-imageWrite(ImageColor, WritePath)
+PixelValue = getPixel(ImageGray, x, y)
+print("{}: Pixel values in {}, {}: {}".format("ImageGray", x, y, PixelValue))
+imageShow(ImageGray, "ImageGray")
+
+
+#PPT 31 page in edit
