@@ -1,1 +1,13 @@
 *.pyc
+chapter1__OpenCV_Python_and_Basic_Image_Processing/*/*.png
+chapter1__OpenCV_Python_and_Basic_Image_Processing/*/*.jpg
+chapter1__OpenCV_Python_and_Basic_Image_Processing/*/*.mp4
+chapter2__Reconize_Traffic_Light_with_OpenCV_Python/*/*.png
+chapter2__Reconize_Traffic_Light_with_OpenCV_Python/*/*.jpg
+chapter2__Reconize_Traffic_Light_with_OpenCV_Python/*/*.mp4
+chapter3__Land_Detection_with_OpenCV_Python/*/*.png
+chapter3__Land_Detection_with_OpenCV_Python/*/*.jpg
+chapter3__Land_Detection_with_OpenCV_Python/*/*.mp4
+chapter4__OpenCV_C++/*/*.png
+chapter4__OpenCV_C++/*/*.jpg
+chapter4__OpenCV_C++/*/*.mp4
