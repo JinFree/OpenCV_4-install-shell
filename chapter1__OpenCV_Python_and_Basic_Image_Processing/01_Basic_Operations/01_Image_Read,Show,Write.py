@@ -14,6 +14,9 @@ SellectedImage = Image01
 OpenPath = Path + SellectedImage
 WritePath = "processed" + SellectedImage
 
-Image = imageRead(OpenPath)
+ImageColor = imageRead(OpenPath, cv2.IMREAD_COLOR)
+ImageGray = imageRead(OpenPath, cv2.IMREAD_GRAYSCALE)
+ImageOrigin = imageRead(OpenPath, cv2.IMREAD_UNCHANGED)
+
 imageShow(Image)
 imageWrite(WritePath, Image)
