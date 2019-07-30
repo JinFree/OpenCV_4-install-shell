@@ -1,9 +1,9 @@
 #!/bin/bash
 sudo apt purge libopencv* python-opencv -y
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-sudo apt install -y apt-utils cmake gcc unzip gedit vim pkg-config build-essential cmake libjpeg-dev libtiff5-dev libpng-dev libavcodec-dev libavformat-dev libswscale-dev libxvidcore-dev libx264-dev libxine2-dev libv4l-dev v4l-utils libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libqt4-dev mesa-utils libgl1-mesa-dri libqt4-opengl-dev libatlas-base-dev gfortran libeigen3-dev python2.7-dev python3-dev python-pip python3-pip
+sudo add-apt-repository ppa:jonathonf/ffmpeg-4
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -ysudo apt install -y apt-utils cmake gcc unzip gedit vim pkg-config build-essential cmake libjpeg-dev libtiff5-dev libpng-dev libavcodec-dev libavformat-dev libswscale-dev libxvidcore-dev libx264-dev libxine2-dev libv4l-dev v4l-utils gstreamer1.0-tools gstreamer1.0-alsa gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev libgstreamer-plugins-bad1.0-dev libqt4-dev mesa-utils libgl1-mesa-dri libqt4-opengl-dev libatlas-base-dev gfortran libeigen3-dev python2.7-dev python3-dev python-pip python3-pip ffmpeg libcanberra-gtk3-module
 pip install numpy && pip3 install numpy
-cd && mkdir OPENCV_INSTALL && cd OPENCV_INSTALL && wget -O opencv.zip https://github.com/opencv/opencv/archive/4.1.0.zip && unzip opencv.zip && wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.1.0.zip && unzip opencv_contrib.zip
+cd && mkdir OPENCV_INSTALL && cd OPENCV_INSTALL && wget -O opencv.zip https://github.com/opencv/opencv/archive/4.1.0.zip && unzip opencv.zip && wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.1.0.zip && unzip opencv_contrib.zip && rm opencv.zip && rm opencv_contrib.zip
 cd && cd OPENCV_INSTALL/opencv-4.1.0/ && mkdir build && cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D CMAKE_INSTALL_PREFIX=/usr/local \
@@ -30,6 +30,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 make -j $(nproc)
 sudo make install
 sudo ldconfig
-echo "export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/lib:\$LD_LIBRARY_PATH" >> ~/.bashrc
 #!/bin/sh
 source ~/.bashrc
